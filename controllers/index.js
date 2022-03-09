@@ -1,3 +1,4 @@
 const listTalker = require('./listTalker');
+const talkerId = require('./talkerId');
 
-module.exports = { listTalker };
+module.exports = { listTalker, talkerId };
