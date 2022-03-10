@@ -19,6 +19,8 @@ const PORT = '3000';
 
 app.get('/talker', controllers.listTalker);
 
+app.get('/talker/search', validationNewToken, controllers.getTalkerSearch);
+
 app.get('/talker/:id', controllers.talkerId);
 
 app.post('/login', controllers.postLogin);
