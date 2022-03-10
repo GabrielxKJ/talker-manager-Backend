@@ -18,8 +18,11 @@ const HTTP_OK_STATUS = 200;
 const PORT = '3000';
 
 app.get('/talker', controllers.listTalker);
+
 app.get('/talker/:id', controllers.talkerId);
+
 app.post('/login', controllers.postLogin);
+
 app.post('/talker', 
 validationNewToken,
 validationNewName,
@@ -28,6 +31,7 @@ validationNewTalk,
 validationNewDate,
 validationNewRate,
  controllers.postTalker);
+
 app.put('/talker/:id',
 validationNewToken,
 validationNewName,
@@ -36,6 +40,9 @@ validationNewTalk,
 validationNewDate,
 validationNewRate,
  controllers.putTalker);
+
+app.delete('/talker/:id', validationNewToken, controllers.deleteTalker); 
+
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
