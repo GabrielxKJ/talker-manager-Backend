@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const controllers = require('./controllers');
 
 const { 
@@ -9,11 +9,14 @@ const {
   validationNewToken,
   validationNewRate,
   validationNewTalk,
+  validationPassword,
+  validationEmail,
   } = require('./middleware/index');
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(express.json());
+// app.use(bodyParser.json());
 const HTTP_OK_STATUS = 200;
 const PORT = '3000';
 
@@ -23,7 +26,7 @@ app.get('/talker/search', validationNewToken, controllers.getTalkerSearch);
 
 app.get('/talker/:id', controllers.talkerId);
 
-app.post('/login', controllers.postLogin);
+app.post('/login', validationEmail, validationPassword, controllers.postLogin);
 
 app.post('/talker', 
 validationNewToken,

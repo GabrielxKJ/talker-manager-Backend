@@ -1,4 +1,4 @@
-module.exports = async (req, res, next) => {
+module.exports = (req, res, next) => {
     try {
         const { password } = req.body;
         const MINLENGTH = 6;

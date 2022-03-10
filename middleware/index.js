@@ -4,6 +4,8 @@ const validationNewDate = require('./validationNewDate');
 const validationNewTalk = require('./validationNewTalk');
 const validationNewToken = require('./validationNewToken');
 const validationNewRate = require('./validationNewRate');
+const validationEmail = require('./validationEmail');
+const validationPassword = require('./validationPassword');
 
 module.exports = { 
     validationNewAge,
@@ -12,4 +14,6 @@ module.exports = {
     validationNewRate,
     validationNewToken,
     validationNewDate,
+    validationEmail,
+    validationPassword,
 };
